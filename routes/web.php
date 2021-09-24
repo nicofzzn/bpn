@@ -1,6 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,18 +39,19 @@ Route::get('/kontak', function () {
 
 
 //Admin//
-Route::get('/login', function () {
-  return view('admin.login ');
-});
-Route::get('/admin', function () {
-  return view('admin.index');
-});
-Route::get('/buatberita', function () {
-  return view('admin.buatberita');
-});
-Route::get('/editberita', function () {
-  return view('admin.editberita');
-});
-Route::post('/editberita', function (Request $request) {
-  dd($request);
+Route::get('/login', [ViewController::class, 'login'])->name('login')->middleware('guest');
+Route::post('/login', [UserController::class, 'login'])->middleware('guest');
+
+Route::middleware(['auth'])->group(function () {
+  Route::get('/logout', [UserController::class, 'logout']);
+
+  Route::get('/admin', function () {
+    return view('admin.index');
+  });
+  // Route::get('/buatberita', function () {
+  //   return view('admin.buatberita');
+  // });
+  // Route::get('/editberita', function () {
+  //   return view('admin.editberita');
+  // });
 });
