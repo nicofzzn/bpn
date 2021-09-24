@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ViewController;
 use Illuminate\Support\Facades\Route;
 
@@ -45,12 +46,12 @@ Route::post('/login', [UserController::class, 'login'])->middleware('guest');
 Route::middleware(['auth'])->group(function () {
   Route::get('/logout', [UserController::class, 'logout']);
 
-  Route::get('/admin', function () {
-    return view('admin.index');
-  });
-  // Route::get('/buatberita', function () {
-  //   return view('admin.buatberita');
-  // });
+  Route::get('/admin/buatberita', [ViewController::class, 'buatberita']);
+  Route::get('/admin/berita', [BeritaController::class, 'index']);
+  Route::get('/admin/berita/:id', [BeritaController::class, 'show']);
+  Route::post('/admin/berita', [BeritaController::class, 'store']);
+  Route::put('/admin/berita', [BeritaController::class, 'update']);
+  Route::delete('/admin/berita', [BeritaController::class, 'delete']);
   // Route::get('/editberita', function () {
   //   return view('admin.editberita');
   // });

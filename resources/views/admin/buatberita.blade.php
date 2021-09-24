@@ -46,13 +46,24 @@
 
     <div class="row">
       <div class="col-xl- col-lg-12">
+        @if ($errors->any())
+        <ul>
+          @foreach ($errors->all() as $error)
+          <li>
+            <h3>
+              {{ $error }}
+            </h3>
+          </li>
+          @endforeach
+        </ul>
+        @endif
         <div class="card">
           <div class="card-header sizey">
             <h4 class="card-title">Judul Berita</h4>
           </div>
           <div class="card-body">
             <div class="basic-form ">
-              <form action="/editberita" method="POST" enctype="multipart/form-data" id="myForm">
+              <form action="/admin/berita" method="POST" enctype="multipart/form-data" id="myForm">
                 @csrf
 
                 <div class="form-group sizex">
@@ -82,7 +93,7 @@
                         <span class="input-group-text">Upload</span>
                       </div>
                       <div class="custom-file">
-                        <input type="file" name="file" class="custom-file-input" required>
+                        <input type="file" name="gambar" accept="image/*" class="custom-file-input" required>
                         <label class="custom-file-label">Masukkan gambar</label>
                       </div>
                     </div>
@@ -105,8 +116,8 @@
 
                     <div class="col-xl-4 col-xxl-6 col-md-6">
                       <label>Tanggal </label>
-                      <input type="text" name="tanggal" class="datepicker-default form-control" id="datepicker"
-                        placeholder="1 Agustus,2021" required>
+                      <input type="text" name="tanggal" value="" class="datepicker-default form-control" id="datepicker"
+                        required>
                     </div>
 
                     <div class="col-xl-4 col-xxl-6 col-md-6">

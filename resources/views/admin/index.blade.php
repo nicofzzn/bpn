@@ -71,20 +71,21 @@
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach ($berita as $item)
                   <tr>
-
                     <td>
-                      <a href="/detail"> Lorem Ipsum </a>
+                      <a href="/admin/berita/{{ $item->id }}">{{ $item->judul }}</a>
                     </td>
-                    <td>Berita Pertanahan</td>
-                    <td>18 September 2020</td>
-                    <td>Admin Pertanahan</td>
+                    <td>{{ $item->kategori }}</td>
+                    <td>{{ $item->tanggal }}</td>
+                    <td>{{ $item->penulis }}</td>
                     <td class="actions">
-                      <a href="/editberita" method="GET"><i class=" ti-pencil"></i></a>
-                      <a href="/delete" method="GET"><i class=" ti-trash"></i></a>
+                      <a href="/admin/berita/{{ $item->id }}/edit" method="GET"><i class=" ti-pencil"></i></a>
+                      <a href="/admin/berita/{{ $item->id }}/delete" method="GET"><i class=" ti-trash"></i></a>
 
                     </td>
                   </tr>
+                  @endforeach
 
                 </tbody>
               </table>

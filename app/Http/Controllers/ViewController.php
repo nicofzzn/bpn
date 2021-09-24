@@ -10,4 +10,9 @@ class ViewController extends Controller
     {
         return view('admin.login');
     }
+
+    public function buatberita()
+    {
+        return view('admin.buatberita');
+    }
 }
