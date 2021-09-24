@@ -6,10 +6,10 @@
   <div class="quixnav-scroll">
     <ul class="metismenu" id="menu">
       <li class="nav-label first">Menu Berita</li>
-      <li><a href="/admin" aria-expanded="false"><i class="ti-archive"></i><span class="nav-text ">Daftar
+      <li><a href="/admin/berita" aria-expanded="false"><i class="ti-archive"></i><span class="nav-text ">Daftar
             Berita</span></a>
       </li>
-      <li><a href="/buatberita" aria-expanded="false"><i class="ti-pencil-alt"></i><span class="nav-text">Buat
+      <li><a href="/admin/buatberita" aria-expanded="false"><i class="ti-pencil-alt"></i><span class="nav-text">Buat
             Berita</span></a>
 
       </li>
@@ -20,8 +20,6 @@
       </li>
     </ul>
   </div>
-
-
 </div>
 <!--**********************************
             Sidebar end
@@ -80,9 +78,8 @@
                     <td>{{ $item->tanggal }}</td>
                     <td>{{ $item->penulis }}</td>
                     <td class="actions">
-                      <a href="/admin/berita/{{ $item->id }}/edit" method="GET"><i class=" ti-pencil"></i></a>
-                      <a href="/admin/berita/{{ $item->id }}/delete" method="GET"><i class=" ti-trash"></i></a>
-
+                      <a href="/admin/berita/{{ $item->id }}"><i class=" ti-pencil"></i></a>
+                      <a href="/admin/berita/{{ $item->id }}/delete"><i class=" ti-trash"></i></a>
                     </td>
                   </tr>
                   @endforeach

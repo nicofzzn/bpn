@@ -45,14 +45,10 @@ Route::post('/login', [UserController::class, 'login'])->middleware('guest');
 
 Route::middleware(['auth'])->group(function () {
   Route::get('/logout', [UserController::class, 'logout']);
-
   Route::get('/admin/buatberita', [ViewController::class, 'buatberita']);
   Route::get('/admin/berita', [BeritaController::class, 'index']);
-  Route::get('/admin/berita/:id', [BeritaController::class, 'show']);
+  Route::get('/admin/berita/{id}', [BeritaController::class, 'edit']);
   Route::post('/admin/berita', [BeritaController::class, 'store']);
-  Route::put('/admin/berita', [BeritaController::class, 'update']);
+  Route::put('/admin/berita/{id}', [BeritaController::class, 'update']);
   Route::delete('/admin/berita', [BeritaController::class, 'delete']);
-  // Route::get('/editberita', function () {
-  //   return view('admin.editberita');
-  // });
 });

@@ -6,10 +6,10 @@
   <div class="quixnav-scroll">
     <ul class="metismenu" id="menu">
       <li class="nav-label first">Menu Berita</li>
-      <li><a href="/admin" aria-expanded="false"><i class="ti-archive"></i><span class="nav-text ">Daftar
+      <li><a href="/admin/berita" aria-expanded="false"><i class="ti-archive"></i><span class="nav-text ">Daftar
             Berita</span></a>
       </li>
-      <li><a href="/buatberita" aria-expanded="false"><i class="ti-pencil-alt"></i><span class="nav-text">Buat
+      <li><a href="/admin/buatberita" aria-expanded="false"><i class="ti-pencil-alt"></i><span class="nav-text">Buat
             Berita</span></a>
 
       </li>
@@ -20,10 +20,7 @@
       </li>
     </ul>
   </div>
-
-
 </div>
-
 
 <div class="content-body">
   <div class="container-fluid">
@@ -41,6 +38,10 @@
         </ol>
       </div>
     </div>
+
+    @if (session('message'))
+    <h3>{{ session('message') }}</h3>
+    @endif
 
 
 

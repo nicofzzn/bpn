@@ -32,8 +32,18 @@ class BeritaController extends Controller
     $gambar->move('image', $fileName);
 
 
-    $berita = Berita::create($validated);
+    Berita::create($validated);
 
-    return $berita;
+    return redirect('admin/buatberita')->with('message', 'Berita berhasil ditambah');
+  }
+
+  public function edit($id)
+  {
+    $berita = Berita::find($id);
+    if (!$berita) {
+      return redirect('admin/berita');
+    }
+
+    return view('admin.editberita', compact('berita'));
   }
 }
