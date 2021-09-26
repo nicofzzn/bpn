@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Facades\File;
 
 class BeritaController extends Controller
 {
@@ -45,5 +46,16 @@ class BeritaController extends Controller
     }
 
     return view('admin.editberita', compact('berita'));
+  }
+
+  public function delete($id)
+  {
+    $berita = Berita::find($id);
+    if ($berita) {
+      File::delete('image/' . $berita->gambar);
+      $berita->delete();
+      return redirect('admin/berita')->with('message', 'Berita berhasil dihapus');
+    }
+    return redirect('admin/berita')->with('message', 'Berita tidak ditemukan');
   }
 }

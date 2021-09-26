@@ -45,11 +45,10 @@
       </div>
     </div>
     <!-- row -->
-
+    @if (session('message'))
+    <h1>{{ session('message') }}</h1>
+    @endif
     <div class="row">
-
-
-
       <div class="col-lg-12">
         <div class="card">
           <div class="card-header">
@@ -60,7 +59,6 @@
               <table id="example" class="display" style="min-width: 845px">
                 <thead>
                   <tr>
-
                     <th>Judul Berita</th>
                     <th>Kategori</th>
                     <th>Tanggal</th>

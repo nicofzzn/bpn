@@ -50,5 +50,5 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/admin/berita/{id}', [BeritaController::class, 'edit']);
   Route::post('/admin/berita', [BeritaController::class, 'store']);
   Route::put('/admin/berita/{id}', [BeritaController::class, 'update']);
-  Route::delete('/admin/berita', [BeritaController::class, 'delete']);
+  Route::get('/admin/berita/{id}/delete', [BeritaController::class, 'delete']);
 });

@@ -127,20 +127,14 @@
                   <div class="basic-form">
 
                     <div class="form-group">
-                      <textarea name="isi" value='{{ $berita->isi }}' class="form-control summernote" rows="20" id=""
-                        required></textarea>
+                      <textarea name="isi" class="form-control summernote" rows="20" id=""
+                        required>{{ $berita->isi }}</textarea>
                     </div>
                     <center> <button type="submit" class="btn btn-primary btn-lg ">Tambahkan Berita</button>
                     </center>
               </form>
             </div>
-
-
-
-
-
           </div>
-
         </div>
       </div>
     </div>
