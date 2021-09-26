@@ -43,8 +43,6 @@
     <h3>{{ session('message') }}</h3>
     @endif
 
-
-
     <div class="row">
       <div class="col-xl- col-lg-12">
         @if ($errors->any())

@@ -41,7 +41,9 @@
     </div>
 
 
-
+    @if (session('message'))
+    <h1>{{ session('message') }}</h1>
+    @endif
     <div class="row">
       <div class="col-xl- col-lg-12">
         <div class="card">
@@ -50,9 +52,9 @@
           </div>
           <div class="card-body">
             <div class="basic-form ">
-              <form action="/admin/berita" method="POST" enctype="multipart/form-data" id="myForm">
+              <form action="/admin/berita/{{ $berita->id }}" method="POST" enctype="multipart/form-data" id="myForm">
                 @csrf
-
+                @method('put')
                 <div class="form-group sizex">
                   <input type="text" name="judul" value="{{ $berita->judul }}" class="form-control  input-default "
                     placeholder="Masukkan judul berita" required>
@@ -80,7 +82,7 @@
                         <span class="input-group-text">Upload</span>
                       </div>
                       <div class="custom-file">
-                        <input type="file" name="gambar" accept="image/*" class="custom-file-input" required>
+                        <input type="file" name="gambar" accept="image/*" class="custom-file-input">
                         <label class="custom-file-label">Masukkan gambar</label>
                       </div>
                     </div>
