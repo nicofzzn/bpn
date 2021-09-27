@@ -15,7 +15,7 @@ class UserController extends Controller
     if ($user && $user->password === $request['password']) {
       Auth::login($user);
       $request->session()->regenerate();
-      return redirect()->intended('admin');
+      return redirect()->intended('admin/berita');
     }
 
     return back()->with(
