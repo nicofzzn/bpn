@@ -23,10 +23,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
   return view('pengguna.beranda');
 });
-Route::get('/beritabpn', function () {
-  $berita = Berita::latest()->get();
-  return view('pengguna.beritabpn', compact('berita'));
-});
+
+Route::get('/berita', [BeritaController::class, 'listBerita']);
 Route::get('/detailberitabpn/{berita}', function (Berita $berita) {
   return view('pengguna.detailberitabpn', compact('berita'));
 });

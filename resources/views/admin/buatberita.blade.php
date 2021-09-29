@@ -86,7 +86,7 @@
                       <label>Kategori Berita</label>
                       <select id="" name="kategori" class="form-control" required>
                         <option value='' selected disabled>Pilih Kategori</option>
-                        <option value="berita pertahanan">Berita Pertanahan</option>
+                        <option value="berita pertanahan">Berita Pertanahan</option>
                         <option value="pengumuman">Pengumuman</option>
                         <option value="sosialisasi">Sosialisasi</option>
                       </select>

@@ -89,4 +89,19 @@ class BeritaController extends Controller
     }
     return redirect('admin/berita')->with('message', 'Berita tidak ditemukan');
   }
+
+  public function listBerita(Request $request)
+  {
+    $pagination = Berita::latest()->where('judul', 'LIKE', '%' . $request->search . '%')->paginate(5)->withQueryString();
+    $beritas = Berita::latest()->get();
+    $pengumuman = $beritas->where('kategori', 'pengumuman')->take(3);
+    $berita_pertahanan = $beritas->where('kategori', 'berita pertanahan')->take(3);
+    $sosialisasi = $beritas->where('kategori', 'sosialisasi')->take(3);
+    return view('pengguna.beritabpn', [
+      'beritas' => $pagination,
+      'pengumuman' => $pengumuman,
+      'berita_pertahanan' => $berita_pertahanan,
+      'sosialisasi' => $sosialisasi,
+    ]);
+  }
 }

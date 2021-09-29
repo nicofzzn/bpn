@@ -74,7 +74,7 @@
                         <option value='' disabled>Pilih Kategori</option>
                         <option @if ($berita->kategori === 'berita pertanahan')
                           selected
-                          @endif value="berita pertahanan">Berita Pertanahan</option>
+                          @endif value="berita pertanahan">Berita Pertanahan</option>
                         <option @if ($berita->kategori === 'pengumuman')
                           selected
                           @endif value="pengumuman">Pengumuman</option>
