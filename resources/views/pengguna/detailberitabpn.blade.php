@@ -54,7 +54,7 @@
                     </li>
                   </ul>
                 </li>
-        
+
                  <li class="nav-item">
                       <a class="nav-link" href="/infolayanan" >Info Layanan</a >
                     </li>
@@ -77,65 +77,31 @@
                     <div class="single-post row">
                         <div class="col-lg-12 ">
                             <div class="feature-img">
-                                <img class="img-fluid" src="{{url('a/img/blog/feature-img1.jpg')}}" alt="">
+                              <img  class="img-fluid" src="{{url('image/'.$berita->gambar)}}" alt="" width="730" height="340">
+                                <!-- <img class="img-fluid" src="{{url('a/img/blog/feature-img1.jpg')}}" alt=""> -->
                             </div>
                         </div>
-                        
+
                         <div class="col-lg-12 blog_details">
-                            <h2>Astronomy Binoculars A Great Alternative Alternative</h2>
+                            <h2>{{ $berita->judul }}</h2>
                             <p class="quotes">
-                              MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training.
-                              ( HeadLine )
+                              {{$berita->isi}}
                             </p>
-                           
-                        </div>
-                        <div class="col-lg-12">
-
-                            <div class="quotes">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training.
-                                 MCSE boot camps have its supporters and its detractors. Some people do not
-                                understand why you should have to spend money on boot camp when you can get the
-                                 MCSE study materials yourself at a fraction of the camp price. However, who has
-                                 the willpower.
-                                  MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training.
-                                 MCSE boot camps have its supporters and its detractors. Some people do not
-                                understand why you should have to spend money on boot camp when you can get the
-                                 MCSE study materials yourself at a fraction of the camp price. However, who has
-                                 the willpower.
-                                  MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you should have to spend money on boot camp when you can get the MCSE study
-                                materials yourself at a fraction of the camp price. However, who has the willpower to
-                                actually sit through a self-imposed MCSE training.
-                                 MCSE boot camps have its supporters and its detractors. Some people do not
-                                understand why you should have to spend money on boot camp when you can get the
-                                 MCSE study materials yourself at a fraction of the camp price. However, who has
-                                 the willpower.
-                            </div>
                         </div>
 
-                        
                     </div>
-                    
+
                        <div class="col-md-12 text-center">
                   <br>
                   <a href="/beritabpn" class="primary-btnx">Kembali</a>
                 </div>
-                 
+
                 </div>
-                   
+
 
                <div class="col-lg-4">
                     <div class="blog_right_sidebar">
-                        
+
 
                           <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Pengumuman</h3>
@@ -177,7 +143,7 @@
                             </div>
                             <div class="br"></div>
                         </aside>
-                        
+
                         <aside class="single_sidebar_widget popular_post_widget">
                             <h3 class="widget_title">Berita Terbaru</h3>
                             <div class="media post_item">
@@ -256,10 +222,10 @@
                                     <p>08 September 2021</p>
                                 </div>
                             </div>
-                           
+
                         </aside>
-                        
-                        
+
+
                         </div>
                     </div>
 
@@ -267,7 +233,7 @@
         </div>
     </section>
 
-   
+
 
 
 
