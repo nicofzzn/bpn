@@ -3,6 +3,8 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\ViewController;
+use App\Models\Berita;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +24,11 @@ Route::get('/', function () {
   return view('pengguna.beranda');
 });
 Route::get('/beritabpn', function () {
-  return view('pengguna.beritabpn');
+  $berita = Berita::latest()->get();
+  return view('pengguna.beritabpn', compact('berita'));
 });
-Route::get('/detailberitabpn', function () {
-  return view('pengguna.detailberitabpn');
+Route::get('/detailberitabpn/{berita}', function (Berita $berita) {
+  return view('pengguna.detailberitabpn', compact('berita'));
 });
 
 Route::get('/infolayanan', function () {
