@@ -45,7 +45,7 @@
                   <h6>{{ $item->tanggal }}</h6>
                   <br>
                   <p>{{ $item->headline }}</p>
-                  <a href="/detailberitabpn/{{ $item->id }}" class="blog_btnx ">Lihat Berita</a>
+                  <a href="/berita/{{ $item->id }}" class="blog_btnx ">Lihat Berita</a>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@
             <div class="media post_item">
               <img src="{{url('image/'.$item->gambar)}}" alt="post" width="100" height="60">
               <div class="media-body">
-                <a href="/detailberitabpn/{{$item->id}}">
+                <a href="/berita/{{$item->id}}">
                   <h3>{{ $item->judul }}</h3>
                 </a>
                 <p>{{ $item->tanggal }}</p>
@@ -98,7 +98,7 @@
             <div class="media post_item">
               <img src="{{url('image/'.$item->gambar)}}" alt="post" width="100" height="60">
               <div class="media-body">
-                <a href="/detailberitabpn/{{$item->id}}">
+                <a href="/berita/{{$item->id}}">
                   <h3>{{ $item->judul }}</h3>
                 </a>
                 <p>{{ $item->tanggal }}</p>
@@ -113,7 +113,7 @@
             <div class="media post_item">
               <img src="{{url('image/'.$item->gambar)}}" alt="post" width="100" height="60">
               <div class="media-body">
-                <a href="/detailberitabpn/{{$item->id}}">
+                <a href="/berita/{{$item->id}}">
                   <h3>{{ $item->judul }}</h3>
                 </a>
                 <p>{{ $item->tanggal }}</p>

@@ -42,29 +42,24 @@
         </div>
       </div>
     </div>
-
+    @foreach ($beritas as $item)
     <div class="col-lg-12">
       <div class="owl-carousel active_course">
         <div class="single_course">
           <div class="course_head">
-            <img class="img-fluid" src="{{url('a/img/courses/c3.jpg')}}" alt="" />
+            <img class="img-fluid" src="{{url('image/'.$item->gambar)}}" alt="" />
           </div>
           <div class="course_content">
-
-            <span class="tag mb-4 d-inline-block">Kategori</span>
+            <span class="tag mb-4 d-inline-block">{{ $item->kategori }}</span>
             <h4 class="mb-3">
-              <a href="course-details.html">Judul Berita</a>
+              <a href="course-details.html">{{ $item->judul }}</a>
             </h4>
-            <p>
-
-              headline + substr
-
-            </p>
+            <p>{{ $item->headline }}</p>
             <div
               class="course_meta d-flex justify-content-lg-between align-items-lg-center flex-lg-row flex-column mt-4">
               <div class="authr_meta">
 
-                <span class="d-inline-block ml-2">Jember , 18 September 2020</span>
+                <span class="d-inline-block ml-2">{{ $item->tanggal }}</span>
               </div>
               <div class="mt-lg-0 mt-3">
 
@@ -74,11 +69,7 @@
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
-
-  </div>
+    @endforeach
   </div>
 </section>
 

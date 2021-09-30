@@ -20,14 +20,10 @@ use Illuminate\Support\Facades\Route;
 //rancangan awal//
 
 //Guest//
-Route::get('/', function () {
-  return view('pengguna.beranda');
-});
+Route::get('/', [BeritaController::class, 'beranda']);
 
 Route::get('/berita', [BeritaController::class, 'listBerita']);
-Route::get('/detailberitabpn/{berita}', function (Berita $berita) {
-  return view('pengguna.detailberitabpn', compact('berita'));
-});
+Route::get('/berita/{berita}', [BeritaController::class, 'detail']);
 
 Route::get('/infolayanan', function () {
   return view('pengguna.infolayanan');

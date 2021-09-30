@@ -35,130 +35,52 @@
       <div class="col-lg-4">
         <div class="blog_right_sidebar">
 
-
           <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Pengumuman</h3>
+            @foreach ($pengumuman as $item)
             <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post1.jpg')}}" alt="post">
+              <img src="{{url('image/'.$item->gambar)}}" alt="post" width="100" height="60">
               <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Space The Final Frontier</h3>
+                <a href="/berita/{{$item->id}}">
+                  <h3>{{ $item->judul }}</h3>
                 </a>
-                <p>08 September 2021</p>
+                <p>{{ $item->tanggal }}</p>
               </div>
             </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post2.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>The Amazing Hubble</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post3.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Astronomy Or Astrology</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post4.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Asteroids telescope</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
+            @endforeach
             <div class="br"></div>
           </aside>
 
           <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Berita Pertanahan</h3>
+            @foreach ($berita_pertahanan as $item)
             <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post1.jpg')}}" alt="post">
+              <img src="{{url('image/'.$item->gambar)}}" alt="post" width="100" height="60">
               <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Space The Final Frontier</h3>
+                <a href="/berita/{{$item->id}}">
+                  <h3>{{ $item->judul }}</h3>
                 </a>
-                <p>08 September 2021</p>
+                <p>{{ $item->tanggal }}</p>
               </div>
             </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post2.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>The Amazing Hubble</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post3.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Astronomy Or Astrology</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post4.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Asteroids telescope</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
+            @endforeach
             <div class="br"></div>
           </aside>
           <aside class="single_sidebar_widget popular_post_widget">
             <h3 class="widget_title">Sosialisasi</h3>
+            @foreach ($sosialisasi as $item)
             <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post1.jpg')}}" alt="post">
+              <img src="{{url('image/'.$item->gambar)}}" alt="post" width="100" height="60">
               <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Space The Final Frontier</h3>
+                <a href="/berita/{{$item->id}}">
+                  <h3>{{ $item->judul }}</h3>
                 </a>
-                <p>08 September 2021</p>
+                <p>{{ $item->tanggal }}</p>
               </div>
             </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post2.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>The Amazing Hubble</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post3.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Astronomy Or Astrology</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-            <div class="media post_item">
-              <img src="{{url('a/img/blog/popular-post/post4.jpg')}}" alt="post">
-              <div class="media-body">
-                <a href="blog-details.html">
-                  <h3>Asteroids telescope</h3>
-                </a>
-                <p>08 September 2021</p>
-              </div>
-            </div>
-
+            @endforeach
+            <div class="br"></div>
           </aside>
-
-
         </div>
       </div>
 
