@@ -35,6 +35,8 @@ Route::get('/kontak', function () {
   return view('pengguna.kontak');
 });
 
+//test
+
 
 //Admin//
 Route::get('/login', [ViewController::class, 'login'])->name('login')->middleware('guest');
