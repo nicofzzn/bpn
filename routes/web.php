@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BeritaController;
 use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ViewController;
+use App\Http\Controllers\ContactController;
 use App\Models\Berita;
 
 use Illuminate\Support\Facades\Route;
@@ -47,10 +48,11 @@ Route::get('/lihat6', function () {
   return view('pengguna.lihatlayanan6');
 });
 
-//kontak//
-Route::get('/kontak', function () {
-  return view('pengguna.kontak');
-});
+
+
+//ContactUS
+Route::get('/kontak', [ContactController::class, 'index']);
+Route::post('/sendmessage', [ContactController::class, 'sendMessage'])->name('contactus.store');
 
 //Admin//
 Route::get('/login', [ViewController::class, 'login'])->name('login')->middleware('guest');
