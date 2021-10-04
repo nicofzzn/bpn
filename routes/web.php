@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\ViewController;
 use App\Models\Berita;
 
@@ -24,20 +25,32 @@ Route::get('/berita', [BeritaController::class, 'listBerita']);
 Route::get('/berita/{berita}', [BeritaController::class, 'detail']);
 
 //Prosedur Layanan//
-Route::get('/layanan', function () { return view('pengguna.layanan'); });
-Route::get('/lihat1', function () { return view('pengguna.lihatlayanan1'); });
-Route::get('/lihat2', function () { return view('pengguna.lihatlayanan2'); });
-Route::get('/lihat3', function () { return view('pengguna.lihatlayanan3'); });
-Route::get('/lihat4', function () { return view('pengguna.lihatlayanan4'); });
-Route::get('/lihat5', function () { return view('pengguna.lihatlayanan5'); });
-Route::get('/lihat6', function () { return view('pengguna.lihatlayanan6'); });
+Route::get('/layanan', function () {
+  return view('pengguna.layanan');
+});
+Route::get('/lihat1', function () {
+  return view('pengguna.lihatlayanan1');
+});
+Route::get('/lihat2', function () {
+  return view('pengguna.lihatlayanan2');
+});
+Route::get('/lihat3', function () {
+  return view('pengguna.lihatlayanan3');
+});
+Route::get('/lihat4', function () {
+  return view('pengguna.lihatlayanan4');
+});
+Route::get('/lihat5', function () {
+  return view('pengguna.lihatlayanan5');
+});
+Route::get('/lihat6', function () {
+  return view('pengguna.lihatlayanan6');
+});
 
 //kontak//
-Route::get('/kontak', function () { return view('pengguna.kontak'); });
-
-
-
-
+Route::get('/kontak', function () {
+  return view('pengguna.kontak');
+});
 
 //Admin//
 Route::get('/login', [ViewController::class, 'login'])->name('login')->middleware('guest');

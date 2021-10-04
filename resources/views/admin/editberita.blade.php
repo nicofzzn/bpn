@@ -30,86 +30,86 @@
                 @csrf
                 @method('put')
                 <div class="form-group sizex">
-                  <input type="text" name="judul" value="{{ $berita->judul }}" minlength="10" maxlength="65" class="form-control  input-default "
-                    placeholder="Masukkan judul berita" required>
+                  <input type="text" name="judul" value="{{ $berita->judul }}" minlength="10" maxlength="65"
+                    class="form-control  input-default " placeholder="Masukkan judul berita" required>
                 </div>
-                
-                </div>
-                <div class="card-header">
-                  <h4 class="card-title">Gambar Berita</h4>
-                </div>
-                <div class="card-body">
-                  <div class="basic-form custom_file_input">
-                    <div class="input-group mb-3">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                      <div class="custom-file">
-                        <input type="file" name="gambar" accept="image/*" class="custom-file-input">
-                        <label class="custom-file-label">{{$berita->gambar}}</label>
-                      </div>
-                    </div>
+
+            </div>
+            <div class="card-header">
+              <h4 class="card-title">Gambar Berita</h4>
+            </div>
+            <div class="card-body">
+              <div class="basic-form custom_file_input">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Upload</span>
+                  </div>
+                  <div class="custom-file">
+                    <input type="file" name="gambar" accept="image/*" class="custom-file-input">
+                    <label class="custom-file-label">{{$berita->gambar}}</label>
                   </div>
                 </div>
-                <div class="card-header">
-                  <h4 class="card-title">Kelengkapan Berita</h4>
+              </div>
+            </div>
+            <div class="card-header">
+              <h4 class="card-title">Kelengkapan Berita</h4>
+            </div>
+            <div class="card-body">
+              <div class="row form-material">
+                <div class="col-xl-4 col-xxl-6 col-md-6">
+                  <label>Kategori Berita</label>
+                  <select id="" name="kategori" class="form-control" required>
+                    <option value='' disabled>Pilih Kategori</option>
+                    <option @if ($berita->kategori === 'berita pertanahan')
+                      selected
+                      @endif value="berita pertanahan">Berita Pertanahan</option>
+                    <option @if ($berita->kategori === 'pengumuman')
+                      selected
+                      @endif value="pengumuman">Pengumuman</option>
+                    <option @if ($berita->kategori === 'sosialisasi')
+                      selected
+                      @endif value="sosialisasi">Sosialisasi</option>
+                  </select>
                 </div>
-                <div class="card-body">
-                  <div class="row form-material">
-                    <div class="col-xl-4 col-xxl-6 col-md-6">
-                      <label>Kategori Berita</label>
-                      <select id="" name="kategori" class="form-control" required>
-                        <option value='' disabled>Pilih Kategori</option>
-                        <option @if ($berita->kategori === 'berita pertanahan')
-                          selected
-                          @endif value="berita pertanahan">Berita Pertanahan</option>
-                        <option @if ($berita->kategori === 'pengumuman')
-                          selected
-                          @endif value="pengumuman">Pengumuman</option>
-                        <option @if ($berita->kategori === 'sosialisasi')
-                          selected
-                          @endif value="sosialisasi">Sosialisasi</option>
-                      </select>
-                    </div>
 
-                    <div class="col-xl-4 col-xxl-6 col-md-6">
-                      <label>Tanggal </label>
-                      <input type="text" name="tanggal" value="{{ $berita->tanggal }}"
-                        class="datepicker-default form-control" id="datepicker" required>
-                    </div>
-
-                    <div class="col-xl-4 col-xxl-6 col-md-6">
-                      <label>Penulis Berita</label>
-                      <input type="text" name="penulis" value="{{ $berita->penulis }}" class="form-control"
-                        placeholder="Nama Penulis" id="" name="" required>
-                    </div>
-                  </div>
+                <div class="col-xl-4 col-xxl-6 col-md-6">
+                  <label>Tanggal </label>
+                  <input type="text" name="tanggal" value="{{ $berita->tanggal }}"
+                    class="datepicker-default form-control" id="datepicker" required>
                 </div>
-                <div class="card-header">
-                  <h4 class="card-title">Isi Berita</h4>
-                </div>
-                <div class="card-body">
-                  <div class="basic-form">
 
-                    <div class="form-group">
-                      <textarea name="isi" class="form-control summernote" rows="20" id=""
-                        required>{{ $berita->isi }}</textarea>
-                    </div>
-                    <center> <button type="submit" class="btn btn-primary btn-lg ">Simpan Berita</button>
-                    </center>
-              </form>
+                <div class="col-xl-4 col-xxl-6 col-md-6">
+                  <label>Penulis Berita</label>
+                  <input type="text" name="penulis" value="{{ $berita->penulis }}" class="form-control"
+                    placeholder="Nama Penulis" id="" name="" required>
+                </div>
+              </div>
+            </div>
+            <div class="card-header">
+              <h4 class="card-title">Isi Berita</h4>
+            </div>
+            <div class="card-body">
+              <div class="basic-form">
+
+                <div class="form-group">
+                  <textarea name="isi" class="form-control summernote" rows="20" id=""
+                    required>{{ $berita->isi }}</textarea>
+                </div>
+                <center> <button type="submit" class="btn btn-primary btn-lg ">Simpan Berita</button>
+                </center>
+                </form>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+
+
+
+
     </div>
-
-
-
-
-
   </div>
-</div>
 </div>
 
 @endsection
